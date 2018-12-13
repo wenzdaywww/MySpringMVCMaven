@@ -1,0 +1,29 @@
+﻿一、webService发布方法：
+1、使用jdk自带的webservice，使用@WebService注解要发布的类，使用Endpoint.publish发布服务接口,publish发布的端口号不能跟tomcat
+的一样，这是个问题。使用注解不要axis2.war包中WEB-INF文件夹里面的conf、lib、modules文件夹的文件，以及其他配置。
+2、使用axis2发布webservice
+	(1)、axis2.war包中WEB-INF文件夹里面的conf、lib、modules文件夹复制到项目中的WebRoot中；
+	(2)、WebRoot文件夹中新建services文件夹，必须是这个名称。
+	   services中在建myService文件夹，myService文件名随意。
+	   myService中新建META-INF文件夹，必须这个名称。
+	   META-INF中新建services.xml文件，必须为这个名称。
+	(3)、web.xml文件中配置
+	    <servlet>
+			<servlet-name>AxisServlet</servlet-name>
+		<servlet-class>org.apache.axis2.transport.http.AxisServlet</servlet-class>
+			<load-on-startup>1</load-on-startup>
+		</servlet>
+		<servlet-mapping>
+			<servlet-name>AxisServlet</servlet-name>
+		<url-pattern>/services/*</url-pattern>
+		</servlet-mapping>
+	
+二、webservice客户端文件生成方法：
+1、使用jdk自带的wsimport生成webservice客户端文件
+使用该方法生成客户端文件，则wsdl里面的一个方法会生成一个同名java文件以及*Response.java文件，
+如wsdl里面的get方法，则会生成Get.java和GetResponse.java文件。如果wsdl方法里返回的是个类，则客户端会生成对应类，如Sysuser.java类
+2、使用axis2的wsdl2java生成webservice客户端文件
+使用该方法需要配置axis2的环境变量，以及安装axis2。该方法会生成*CallbackHandler.java、*Stub.java和build.xml
+
+三、使用的技术
+Spring MVC、hibernate、log4j、ehcache、axis2 WebServices、

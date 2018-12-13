@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+  <session-factory>
+    <!-- 数据库驱动 -->
+    <property name="connection.driver_class">oracle.jdbc.OracleDriver</property>
+    <!-- 数据库链接地址-->
+    <property name="connection.url">jdbc:oracle:thin:@localhost:1521:orcl</property>
+    <!-- 数据库用户-->
+    <property name="connection.username">test</property>
+    <!-- 数据库密码-->
+    <property name="connection.password">www362412</property>
+    <!-- 数据库连接池默认个数-->
+    <property name="connection.pool_size">50</property>
+    <!-- 数据库sql语言类型-->
+    <property name="dialect">org.hibernate.dialect.OracleDialect</property>
+    <!-- 是否显示SQL语句-->
+    <property name="show_sql">false</property>
+    <!-- 在Hibernate系统参数中hibernate.use_outer_join被打开的情况下,该参数用来允许使用outer
+			join来载入此集合的数据。 -->
+    <property name="use_outer_join">true</property>
+    <!--  -->
+    <property name="statement_cache.size">25</property>
+    <!-- jdbc.use_scrollable_resultset是否允许Hibernate用JDBC的可滚动的结果集。对分页的结果集。对分页时的设置非常有帮助 -->
+    <property name="jdbc.use_scrollable_resultset">true</property>
+    <!-- 默认打开，启用cglib反射优化。cglib是用来在Hibernate中动态生成PO字节码的，打开优化可以加快字节码构造的速度 -->
+    <property name="cglib.user_reflection_optimizer">true</property>
+    <!-- jdbc.batch_size是指Hibernate批量插入,删除和更新时每次操作的记录数。Batch Size越大，
+			批量操作的向数据库发送Sql的次数越少，速度就越快，同样耗用内存就越大 -->
+    <property name="jdbc.batch_size">50</property>
+    <!-- jdbc.fetch_size是指Hibernate每次从数据库中取出并放到JDBC的Statement中的记录条数。Fetch
+			Size设的越大，读数据库的次数越少，速度越快， Fetch Size越小，读数据库的次数越多，速度越慢 -->
+    <property name="jdbc.fetch_size">50</property>
+    <!-- 释放jdbc resources 方式 -->
+    <property name="hibernate.connection.release_mode">auto</property>
+    <!-- 控制台打印sql语句是否换行 -->
+    <property name="format_sql">false</property>
+    <!-- Hibernate应用中操作的统计信息 -->
+    <property name="generate_statistics">false</property>
+    <!-- 表的实体类的hibernate文件 -->
+    <!-- 使用注解配置实体类 -->
+    <mapping class="com.www.app.entity.Sysuser"/>
+    <mapping class="com.www.app.entity.Sysrole"/>
+    <!-- 使用XML配置实体类 -->
+<!--     <mapping resource="com/www/app/entity/Sysuser.hbm.xml"/> -->
+<!--     <mapping resource="com/www/app/entity/Sysrole.hbm.xml"/>  -->
+  </session-factory>
+</hibernate-configuration>

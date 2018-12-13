@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- webService发布名称,命名空间 -->
+<serviceGroup>
+<service name="AxisService" scope="application">
+	<!-- webService描述 -->
+	<description>axisService</description>
+	<!-- 使用SpringAppContextAwareObjectSupplier需要在spring配置文件中配置
+	<bean id="applicationContext" class="org.apache.axis2.extensions.spring.receivers.ApplicationContextHolder" /> -->  
+<!--  	<parameter name="ServiceObjectSupplier">  -->
+<!--  		org.apache.axis2.extensions.spring.receivers.SpringAppContextAwareObjectSupplier  -->
+<!--   	</parameter>   -->
+	<!-- 使用SpringServletContextObjectSupplier不需要其他配置 -->
+ 	<parameter name="ServiceObjectSupplier"> 
+ 		org.apache.axis2.extensions.spring.receivers.SpringServletContextObjectSupplier 
+ 	</parameter>  
+	<!-- webService的实现类 -->
+	<parameter name="SpringBeanName">axis2Service</parameter>
+	<!-- webService的实现类的方法 -->
+	<operation name="getUser">
+		<messageReceiver mep="www3.org/2004/08/wsdl/in-out"
+			class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />
+	</operation>
+	<operation name="getValue">
+		<messageReceiver mep="www3.org/2004/08/wsdl/in-out"
+			class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />
+	</operation>
+	<operation name="login">
+		<messageReceiver mep="www3.org/2004/08/wsdl/in-out"
+			class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />
+	</operation>
+	<operation name="logout">
+		<messageReceiver mep="www3.org/2004/08/wsdl/in-out"
+			class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />
+	</operation>
+	<operation name="get">
+		<messageReceiver mep="www3.org/2004/08/wsdl/in-out"
+			class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />
+	</operation>
+	<operation name="set">
+		<messageReceiver mep="www3.org/2004/08/wsdl/in-out"
+			class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />
+	</operation>
+	<operation name="notify">
+		<messageReceiver mep="www3.org/2004/08/wsdl/in-out"
+			class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />
+	</operation>
+</service> 
+</serviceGroup> 

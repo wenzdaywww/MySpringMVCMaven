@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.www.app.entity.Sysrole" table="SYSROLE">
+    
+    <id name="id" type="java.math.BigDecimal" column="ID">
+      <generator class="assigned"/>
+    </id>
+    <property name="roleid" type="java.lang.String" column="ROLEID"/>
+    <property name="rolename" type="java.lang.String" column="ROLENAME"/>
+  </class>
+</hibernate-mapping>

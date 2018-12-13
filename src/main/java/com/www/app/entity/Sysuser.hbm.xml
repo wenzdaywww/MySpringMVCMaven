@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.www.app.entity.Sysuser" table="SYSUSER">
+    
+    <id name="userId" type="java.lang.String" column="USERID">
+      <generator class="assigned"/>
+    </id>
+    <property name="userName" type="java.lang.String" column="USERNAME"/>
+    <property name="passwd" type="java.lang.String" column="PASSWD"/>
+    <property name="userQQ" type="java.math.BigDecimal" column="USERQQ"/>
+    <property name="reDate" type="java.sql.Timestamp" column="REDATE"/>
+  </class>
+</hibernate-mapping>
