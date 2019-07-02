@@ -14,7 +14,7 @@
 	<url>http://maven.apache.org</url>
 	<!-- **********版本信息配置********** -->
 	<properties>
-		<java-version>1.7</java-version>
+		<java-version>1.8</java-version>
 		<junit-version>4.5</junit-version>
 		<log4j-version>1.2.17</log4j-version>
 		<jstl-version>1.2</jstl-version>
